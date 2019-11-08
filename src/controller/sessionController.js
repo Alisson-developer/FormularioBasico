@@ -10,7 +10,12 @@ module.exports = {
         let user = await User.findOne({ email })
 
         if(!user){
-            user = await User.create({ nome, sobrenome, email, senha })
+            user = await User.create({ 
+                thumbnail: filename,
+                nome, 
+                sobrenome, 
+                email, 
+                senha })
         }
 
         return res.json(user)
